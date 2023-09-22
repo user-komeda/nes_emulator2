@@ -1,0 +1,28 @@
+{
+  "name": "nes_emulator2",
+  "packageManager": "yarn@3.6.3",
+  "scripts": {
+    "build": "webpack",
+    "lint": " yarn eslint . --ext .ts,.tsx --config .eslintrc --fix  --max-warnings=0",
+    "format": "yarn prettier --write src/**"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^6.7.2",
+    "@typescript-eslint/parser": "^6.7.2",
+    "eslint": "^8.49.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-prettier": "^5.0.0",
+    "prettier": "^3.0.3",
+    "ts-loader": "^9.4.4",
+    "typescript": "^5.2.2",
+    "webpack": "^5.88.2",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^4.15.1"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "yarn format --write",
+      "yarn lint"
+    ]
+  }
+}
