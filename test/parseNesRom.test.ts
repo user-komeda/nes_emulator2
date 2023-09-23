@@ -10,11 +10,11 @@ test('正常終了', () => {
   expect(parsedCharacterRom.length).toEqual(8191)
 })
 
-// test('異常終了', () => {
-//   const nesFile = fs.readFileSync(
-//     path.resolve(__dirname, '../test-resource/hello.txt')
-//   )
-//   expect(() => parseNesRom(nesFile)).toThrow(
-//     new Error('This file is not NES format.')
-//   )
-// })
+test('異常終了', () => {
+  const nesFile = fs.readFileSync(
+    path.resolve(__dirname, '../test-resource/hello.txt')
+  )
+  expect(() => parseNesRom(nesFile)).toThrow(
+    new Error('This file is not NES format.')
+  )
+})
