@@ -1,10 +1,12 @@
+import load from './nes/load'
+
 const element = document.getElementById('nes') as HTMLInputElement
 
 element.addEventListener('change', () => {
   const file = element.files![0]
   const fileReader = new FileReader()
   fileReader.onload = () => {
-    console.log(fileReader.result)
+    load(fileReader.result as ArrayBuffer)
   }
   fileReader.readAsArrayBuffer(file)
 })
