@@ -27,3 +27,4 @@ dist*
 .yarn
 /.yarn.lock
 /yarn.lock
+/static/
