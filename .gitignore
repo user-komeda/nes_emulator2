@@ -28,3 +28,4 @@ dist*
 /.yarn.lock
 /yarn.lock
 /static/
+/.vscode/settings.json
