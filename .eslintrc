@@ -1,6 +1,6 @@
 {
   "env": {
-    "es6": true
+    "es6": 2
   },
   "extends": [
     "eslint:recommended",
@@ -9,9 +9,72 @@
     "eslint-config-prettier",
     "prettier"
   ],
-  "plugins": ["@typescript-eslint"],
+  "plugins": ["@typescript-eslint", "jsdoc"],
   "parserOptions": {
     "parser": "@typescript-eslint/parser"
   },
-  "rules": {}
+  "rules": {
+    "jsdoc/require-jsdoc": [
+      "error",
+      {
+        "publicOnly": true,
+        "require": {
+          "ArrowFunctionExpression": true,
+          "ClassDeclaration": true,
+          "ClassExpression": true,
+          "FunctionDeclaration": true,
+          "FunctionExpression": true,
+          "MethodDefinition": true
+        },
+        "contexts": ["VariableDeclaration", "TSMethodSignature"]
+      }
+    ],
+    "jsdoc/require-description": [
+      "error",
+      {
+        "contexts": [
+          "ArrowFunctionExpression",
+          "ClassDeclaration",
+          "ClassExpression",
+          "FunctionDeclaration",
+          "FunctionExpression",
+          "MethodDefinition",
+          "VariableDeclaration",
+          "TSMethodSignature"
+        ]
+      }
+    ],
+    "jsdoc/require-param": [
+      "error",
+      {
+        "contexts": [
+          "ArrowFunctionExpression",
+          "ClassDeclaration",
+          "ClassExpression",
+          "FunctionDeclaration",
+          "FunctionExpression",
+          "MethodDefinition",
+          "PropertyDefinition",
+          "VariableDeclaration",
+          "TSPropertySignature",
+          "TSMethodSignature"
+        ]
+      }
+    ],
+    "jsdoc/tag-lines": [
+      "error",
+      "always",
+      {
+        "startLines": 1,
+        "applyToEndTag": false
+      }
+    ],
+    "jsdoc/sort-tags": [
+      "error",
+      {
+        "reportIntraTagGroupSpacing": false
+      }
+    ],
+    "jsdoc/require-returns": ["error"]
+  }
 }

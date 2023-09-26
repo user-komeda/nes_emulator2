@@ -8,6 +8,7 @@ const CHARACTER_ROM_SIZE = 0x2000
  * nesファイルを読み込み中身を取得
  *
  * @param result 処理結果
+ *
  * @returns NesRom
  */
 const parseNesRom = (result: ArrayBuffer): NesRom => {
