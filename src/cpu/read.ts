@@ -10,8 +10,6 @@ import cpuBusRead from '../cpubus/read'
  */
 const read = (addr: number, size: 1 | 2 = 1): number => {
   addr &= 0xffff
-  console.log(addr)
-  console.log(addr + 1)
   return size === 2
     ? cpuBusRead(addr) | (cpuBusRead(addr + 1) << 8)
     : cpuBusRead(addr)

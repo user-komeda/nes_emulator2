@@ -6,7 +6,7 @@ import initOpeCodeList, { OpecodeProps } from './opeCode'
  */
 const run = () => {
   const result = fetchOpeCode()
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const opeCode: OpecodeProps = initOpeCodeList()[result]
-  console.log(opeCode)
 }
 export default run
