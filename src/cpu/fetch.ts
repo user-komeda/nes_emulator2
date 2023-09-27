@@ -11,7 +11,7 @@ import register from './register'
  * @default size=1
  */
 const fetchOpeCode = (size: 1 | 2 = 1): number => {
-  const result = read(register.PC)
+  const result = read(register.PC, size)
   register.PC += size
   return result
 }

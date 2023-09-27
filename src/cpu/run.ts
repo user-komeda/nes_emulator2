@@ -1,4 +1,5 @@
 import fetchOpeCode from './fetch'
+import fetchOpeCodeAddress from './fetchOpeCodeAddress'
 import initOpeCodeList, { OpecodeProps } from './opeCode'
 
 /**
@@ -6,7 +7,8 @@ import initOpeCodeList, { OpecodeProps } from './opeCode'
  */
 const run = () => {
   const result = fetchOpeCode()
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const opeCode: OpecodeProps = initOpeCodeList()[result]
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const address = fetchOpeCodeAddress(opeCode.mode)
 }
 export default run
