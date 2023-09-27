@@ -19,7 +19,23 @@ export const defaultRegister = {
   PC: 0x0000,
 }
 
-const register = JSON.parse(JSON.stringify(defaultRegister))
+const register: {
+  A: number
+  X: number
+  Y: number
+  P: {
+    negative: boolean
+    overflow: boolean
+    reserved: boolean
+    break: boolean
+    decimal: boolean
+    interrupt: boolean
+    zero: boolean
+    carry: boolean
+  }
+  SP: number
+  PC: number
+} = JSON.parse(JSON.stringify(defaultRegister))
 
 /**
  *registerの初期化
